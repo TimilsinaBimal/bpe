@@ -1,13 +1,13 @@
 import regex as re
 
 
-class Regex:
+class RegexTokenizer:
     def match_pattern(self, text: str, model: str) -> list:
         pattern = self._get_pattern(model)
         matches = re.findall(pattern, text)
         return matches
 
-    def _get_pattern(self, model: str) -> str:
+    def _get_pattern(self, model: str) -> str | None:
         pattern_mapping = {
             "gpt4": self._gpt4(),
         }
